@@ -1,0 +1,22 @@
+<div class="col-md-12" ng-controller="sprocketsWeatherPluginConfigController">
+    <div class="alert alert-danger" ng-show="!validation.isValid">
+        <div ng-repeat="error in validation.errors track by $index">{{error}}</div>
+    </div>
+    <div class="form-group">
+        <label for="apiKey">API Key:</label>
+        <input type="text" class="form-control" ng-model="config.apiKey">
+    </div>
+    <div class="form-group">
+        <label for="location">Location:</label>
+        <angucomplete-alt id="location"
+                          placeholder="Search locations"
+                          pause="400"
+                          selected-object="selectLocation"
+                          remote-api-handler="queryLocation"
+                          remote-url-data-field="RESULTS"
+                          title-field="name"
+                          initial-value="config.locationName"
+                          input-class="form-control"/>
+    </div>
+    <div class="well well-sm"> Location lookup provided by Wunderground&reg; <img height="32px" src="https://icons.wxug.com/logos/PNG/wundergroundLogo_4c_horz.png"></div>
+</div>

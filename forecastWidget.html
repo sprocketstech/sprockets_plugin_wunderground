@@ -1,0 +1,17 @@
+<div>
+    <table width="100%">
+        <tr>
+            <td ng-repeat="day in values.sensors.FORECAST.value" title="{{day.text}}">
+                <div class="text-center">{{day.title}}</div>
+                <div class="text-center">{{day.high}} F | {{day.low}} F</div>
+                <div class="text-center">
+                    <div class="text-center"><i class="wu wu-black wu-64 {{day.icon}}"></i></div>
+                    <h4 class="text-center">{{day.conditions}}</h4>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <div class="row">&nbsp;</div>
+    <div class="well well-sm"> Weather provided by Wunderground&reg; <img height="32px" src="https://icons.wxug.com/logos/PNG/wundergroundLogo_4c_horz.png"></div>
+</div>

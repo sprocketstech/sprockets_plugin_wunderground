@@ -1,0 +1,38 @@
+<div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="text-center"><i class="wu wu-black wu-64 {{values.sensors.CONDITIONS.value.condition_icon}}"></i></div>
+            <h4 class="text-center">{{values.sensors.CONDITIONS.value.condition}}</h4>
+        </div>
+        <div class="col-md-7">
+            <h3 class="text-center"><a ng-href="{{values.sensors.CONDITIONS.value.forecast_url}}">{{values.sensors.CONDITIONS.value.location}}</a></h3>
+            <h3 class="text-center">{{values.sensors.CONDITIONS.value.temperature}}</h3>
+        </div>
+        <div class="col-md-1">
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <span class="pull-right cursor-pointer" ng-click="expanded = !expanded" id="showHolds">
+                <i class="fa fa-chevron-down" ng-show="!expanded"></i>
+                <i class="fa fa-chevron-up" ng-show="expanded"></i>
+            </span>
+        </div>
+
+    </div>
+    <div class="row text-center" ng-show="expanded">
+        <hr/>
+        <table width="100%">
+            <tr><td>Feels Like: </td><td>&nbsp;{{values.sensors.CONDITIONS.value.feels_like}}</td></tr>
+            <tr><td>Winds: </td><td>&nbsp;{{values.sensors.CONDITIONS.value.wind_direction}} {{values.sensors.CONDITIONS.value.wind_speed}} mph</td></tr>
+            <tr><td>Wind Gusts: </td><td>&nbsp;{{values.sensors.CONDITIONS.value.wind_direction}} {{values.sensors.CONDITIONS.value.wind_gusts}} mph</td></tr>
+            <tr><td>Pressure: </td><td>&nbsp;{{values.sensors.CONDITIONS.value.pressure}} in. <i class="fa fa-arrow-up" ng-if="values.sensors.CONDITIONS.value.pressure_trend=='+'"></i><i class="fa fa-arrow-down" ng-if="values.sensors.CONDITIONS.value.pressure_trend=='-'"></i></td></tr>
+            <tr><td>Visibility: </td><td>&nbsp;{{values.sensors.CONDITIONS.value.visibility}} miles</td></tr>
+            <tr><td>Windchill: </td><td>&nbsp;{{values.sensors.CONDITIONS.value.wind_chill}}</td></tr>
+            <tr><td>Heat Index: </td><td>&nbsp;{{values.sensors.CONDITIONS.value.heat_index}}</td></tr>
+            <tr><td>Dew Point: </td><td>&nbsp;{{values.sensors.CONDITIONS.value.dewpoint}}</td></tr>
+            <tr><td>Humidity: </td><td>&nbsp;{{values.sensors.CONDITIONS.value.humidity}}</td></tr>
+            <tr><td>Rainfall: </td><td>&nbsp;{{values.sensors.CONDITIONS.value.precip}}</td></tr>
+        </table>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="well well-sm"> Weather provided by Wunderground&reg; <img height="32px" src="https://icons.wxug.com/logos/PNG/wundergroundLogo_4c_horz.png"></div>
+</div>
